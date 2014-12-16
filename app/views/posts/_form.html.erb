@@ -1,0 +1,29 @@
+<%= form_for @post do |f| %>
+
+	<% if @post.errors.any? %>
+		<h2><%= pluralize(@post.errors.count, "error") %> prenvented this post from saving</h2>
+		<ul>
+			<% @post.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<div class="form-group">
+
+	    <%= f.label :title, "Title:", class: "col-md-1 control-label" %>
+	    <div class="col-md-11 mb20">
+	        <%= f.text_field :title, class: "form-control" %>
+	    </div>
+	    <br>
+	    <%= f.label :body, "Post:", class: "col-md-1 control-label" %>
+	    <div class="col-md-11 mb20">
+	        <%= f.text_area  :body, class: "form-control" %>
+	    </div>
+	    <br>
+	    <div class="col-md-11 col-md-offset-1">
+	        <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
+	    </div>
+	    
+	</div>
+<% end %>
