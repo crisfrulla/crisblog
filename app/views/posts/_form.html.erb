@@ -10,20 +10,17 @@
 	<% end %>
 
 	<div class="form-group">
-
-	    <%= f.label :title, "Title:", class: "col-md-1 control-label" %>
-	    <div class="col-md-11 mb20">
+	    <%= f.label :title, "Title:" %>
+	    <div class="mb20">
 	        <%= f.text_field :title, class: "form-control" %>
 	    </div>
-	    <br>
-	    <%= f.label :body, "Post:", class: "col-md-1 control-label" %>
-	    <div class="col-md-11 mb20">
+	</div>
+	<div class="form-group">
+	    <%= f.label :body, "Post:"%>
+	    <div class="mb20">
 	        <%= f.text_area  :body, class: "form-control" %>
 	    </div>
-	    <br>
-	    <div class="col-md-11 col-md-offset-1">
-	        <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
-	    </div>
+	    <%= f.submit "Submit", class: "btn btn-default btn-primary" %>
 	    
 	</div>
 <% end %>
