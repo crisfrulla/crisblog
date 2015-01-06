@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
     	<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			<%= @posts.each do |post| %>
+			<% @posts.each do |post| %>
 				<div class="post-preview">
 					<h2 class="post-title"> <%= link_to post.title, post %> </h2>
 					<p class="post-meta"> <%= post.created_at.strftime("%B, %d, %Y") %> </p>

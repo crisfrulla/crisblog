@@ -30,17 +30,30 @@
                         <%= link_to "Blog", root_path %>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <%= link_to "About", about_path %>
                     </li>
-                    <li>
-			        	<%= link_to "New Post", new_post_path  %>
-			        </li>
-			        <li class="dropdown">
+                    <% if user_signed_in? %>
+                        <li>
+    			        	<%= link_to "New Post", new_post_path  %>
+    			        </li>
+                    <% end %>
+                    <% if !user_signed_in? %>
+                        <li>
+                            <%= link_to "Login", new_user_session_path  %>
+                        </li>
+                    <% end %>
+
+                    <% if user_signed_in? %>
+                        <li>
+                            <%= link_to "Logout", destroy_user_session_path, method: :delete  %>
+                        </li>
+                    <% end %>
+			        <!-- <li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Login <span class="caret"></span></a>
 			          <ul class="dropdown-menu" role="menu">
 			            <li><a href="#">Logout</a></li>
 			          </ul>
-			        </li>
+			        </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -52,9 +65,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1>Cris Blog</h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">Lorem ipsum dolor sit amet</span>
                     </div>
                 </div>
             </div>
